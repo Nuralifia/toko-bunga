@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ajax 2 gethint</title>
+<script>
+function showHint(str) {
+  if (str.length == 0) {
+    document.getElementById("txtHint").innerHTML = "";
+    return;
+  } else {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("txtHint").innerHTML = this.responseText;
+      }
+    };
+    xmlhttp.open("GET", "gethint.php?q=" + str, true);
+    xmlhttp.send();
+  }
+}
+</script>
+<link rel="stylesheet" type="text/css" href="kopi.css">
+<style>
+  label {
+    display: block;
+  }
+</style>
+</head>
+<body bgcolor="00FFFF">
+
+
+<p><b>Tulislah Pendapat Anda Tentang Kami Disini : </b></p>
+<form action="">
+  <label for="fname"><p>Pendapat Anda :<p></label>
+    <textarea placeholder="" id="fname" name="fname" onkeyup="showHint(this.value)"></textarea><br>
+  <button type="submit" name="Kirim" style="width: 163px;">Kirim</button>
+</form>
+<br><p>Terima Kasih Sudah Berpendapat ! <span id="txtHint"></span></p>
+
+
+
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#div1").fadeOut();
+    $("#div2").fadeOut("slow");
+    $("#div3").fadeOut(3000);
+  });
+});
+</script>
+</head>
+<body>
+
+<p>Semoga Kedepanya Kita Dapat Meningkatkan Kualitas Toko Kami</p>
+
+<br></br><br></br><button><a href="bisa.html">Klik Disini Untuk Kembali KeBeranda</a></button><br><br>
+
+<div id="div1" style="width:220px;height:23px;background-color:red;"><center>FlowerShop</center></div><br>
+<div id="div2" style="width:200px;height:23px;background-color:yellow;"><center>FlowerShop</center></div><br>
+<div id="div3" style="width:180px;height:23px;background-color:green;"><center>FlowerShop</center></div><br>
+<div id="div3" style="width:160px;height:23px;background-color:blue;"><center>FlowerShop</center></div>
+
+</body>
+</html>

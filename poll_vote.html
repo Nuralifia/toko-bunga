@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Ajax 1 poll_vote</title>
+<script>
+function getVote(int) {
+  var xmlhttp=new XMLHttpRequest();
+  xmlhttp.onreadystatechange=function() {
+    if (this.readyState==4 && this.status==200) {
+      document.getElementById("poll").innerHTML=this.responseText;
+    }
+  }
+  xmlhttp.open("GET","poll_vote.php?vote="+int,true);
+  xmlhttp.send();
+}
+</script>
+<link rel="stylesheet" type="text/css" href="kopi.css">
+</head>
+<body bgcolor="#00FFFF">
+	<header>
+
+<div id="poll">
+<h3>Apakah Anda Menyukai Pelayanan Kami ?</h3>
+<form>
+<h4>Sangat Menyukai : <input type="radio" name="vote" value="0" onclick="getVote(this.value)"></h4>
+<h4>Tidak Menyukai : <input type="radio" name="vote" value="1" onclick="getVote(this.value)"></h4><br></br>
+
+<p>Alasan Pendapat anda<p>
+
+
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#p1").css("color", "red").slideUp(2000).slideDown(2000);
+  });
+});
+</script>
+</head>
+<body>
+<button><a href="gethint.html" >Tulis Disini</a></button>
+</body>
+
+
+
+<p>Terima kasih telah meluangkan waktu untuk menanggapi web kami</p>
+<p>Semoga Kedepannya Kami Bisa Lebih Baik Lagi</p>
+</form>
+</div>
+
+
+
+
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    var div = $("div");
+    div.animate({height: '300px', opacity: '0.4'}, "slow");
+    div.animate({width: '300px', opacity: '0.8'}, "slow");
+    div.animate({height: '100px', opacity: '0.4'}, "slow");
+    div.animate({width: '100px', opacity: '0.8'}, "slow");
+  });
+});
+</script> 
+</head>
+<body>
+
+<br></br><br></br><button><a href="gethint.html">Mulai Menulis</a></button>
+
+<p>Terima Kasih Untuk masukan anda, semoga hari anda menyenangkan!</p>
+
+<div style="background:#ff00ff;height:50px;width:100px;position:right;"><center>Happpy Shopping<center></div>
+<div id="div3" style="width:100px;height:100px;background-color:blue;"></div>
+
+<div style="background:#ff00ff;height:50px;width:100px;position:right;"><center>Happpy Shopping<center></div>
+<div id="div3" style="width:100px;height:100px;background-color:blue;"></div>
+
+
+</header>
+</body>
+</html>
